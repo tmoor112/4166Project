@@ -1,0 +1,53 @@
+#header {
+    background-color: rgb(55, 160, 55);
+    overflow: auto;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+#header a {
+    color:white;
+}
+
+#header a:hover {
+    background-color: black;
+}
+
+#logo {
+    width:10%;
+    height:auto;
+    margin: 8px;
+}
+
+.text-center {
+    padding: 50px 80px;
+}
+
+ul {
+    list-style:none;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.center-block {
+    padding: 25px 40px;
+    text-align: left;
+}
+
+footer {
+    margin-top: 300px;
+    background-color: rgb(55, 160, 55);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    vertical-align: center;
+    color:white;
+}
+
