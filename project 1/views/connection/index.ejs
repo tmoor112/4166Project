@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="text-center">
+            <!--If categories isn't empty, we can then display each category first. If it is, there's no connections-->
+            <%if(categories.length) {%>
+                <%categories.forEach(category=>{%>
+                    <div class="row center-block">
+                        <div class="col-md-5 col-md-offset-2">
+                            <!--Display category name as the header. Previously named topics, but this rubric said category and I liked it more than topic for my personal project-->
+                            <h2><%= category%></h2>
+                            <ul>
+                                <!--Iterate through each connection-->
+                                <%connections.forEach(connection=>{%>
+                                    <!--Only display the connection if the category matched the category as chosen by categories.forEach-->
+                                    <% if(connection.category === category){%>
+                                        <li><a href = "connections/<%=connection.id%>"> <p><%= connection.title%></p></a></li>
+                                    <%}%>
+                                <%});%>
+                            </ul>
+                        </div>
+                    </div>
+                <%});%>
+                 
+            <%} else {%>    
+                   <p>There are no connections available</p>
+            <%}%>         
+        </div>
+
+    </main>
+<%- include('../partials/footer.ejs')%>

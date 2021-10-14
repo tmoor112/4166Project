@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="text-center">
+            <div class="center-block">
+                <div class="col-md-2">
+                    <img class="img-responsive" src="<%= connection.image %>" alt="Thumbnail for connection">
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <h1 class="bold"><%= connection.title %></h1>
+                    <h3 class="bold">Hosted By: <%= connection.host%></h3>
+                    <h4><%= connection.date %></h4>
+                    <h4><%= connection.start %> to <%= connection.end %></h4>
+                    <h4><%= connection.location %></h4>
+                    <br>
+                    <h3 class="bold">Details</h3>
+                    <p><%= connection.details%></p>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                    <form>
+                        <button formmethod = "GET" formaction="/connections/<%= connection.id%>/edit">Edit</button>
+                        <button type = "submit" formmethod = "POST" formaction="/connections/<%= connection.id%>?_method=DELETE">Delete</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+<%- include('../partials/footer.ejs')%>
